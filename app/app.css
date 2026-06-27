@@ -452,8 +452,8 @@
                     @apply absolute inset-0 opacity-40 pointer-events-none;
 
                     background-image:
-                            linear-gradient(#3b82f6 1px, transparent 1px),
-                            linear-gradient(90deg, #3b82f6 1px, transparent 1px);
+                        linear-gradient(#3b82f6 1px, transparent 1px),
+                        linear-gradient(90deg, #3b82f6 1px, transparent 1px);
 
                     background-size: 60px 60px;
                 }
@@ -594,6 +594,833 @@
 
         &.loading {
             @apply text-sm text-zinc-500;
+        }
+    }
+
+    /* Product Page */
+    .product-page {
+        @apply min-h-screen bg-background relative;
+
+        .product-hero {
+            @apply pt-32 pb-20 px-6 max-w-7xl mx-auto;
+
+            .hero-content {
+                h1 {
+                    @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+                }
+
+                p {
+                    @apply text-lg text-zinc-600 max-w-3xl mx-auto;
+                }
+            }
+        }
+
+        .features-section {
+            @apply py-24 bg-white border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-7xl mx-auto px-6;
+
+                .section-head {
+                    @apply text-center mb-16;
+
+                    h2 {
+                        @apply text-4xl font-serif font-bold text-black mb-4;
+                    }
+
+                    p {
+                        @apply text-lg text-zinc-600;
+                    }
+                }
+
+                .features-grid {
+                    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+
+                    .feature-card {
+                        @apply bg-surface rounded-2xl border border-zinc-100 p-8 hover:shadow-lg transition-all duration-300;
+
+                        .feature-icon {
+                            @apply w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-4 text-primary;
+                        }
+
+                        h3 {
+                            @apply text-xl font-serif font-bold text-black mb-3;
+                        }
+
+                        p {
+                            @apply text-zinc-600 text-sm;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cta-section {
+            @apply py-20 px-6 max-w-4xl mx-auto text-center;
+
+            .cta-inner {
+                h2 {
+                    @apply text-4xl font-serif font-bold text-black mb-4;
+                }
+
+                p {
+                    @apply text-lg text-zinc-600 mb-8;
+                }
+
+                .cta-button {
+                    @apply inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-wide font-bold bg-primary text-white hover:bg-[#ea580c] rounded-lg transition-all duration-200;
+                }
+            }
+        }
+    }
+
+    /* Pricing Page */
+    .pricing-page {
+        @apply min-h-screen bg-background relative;
+
+        .pricing-hero {
+            @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+            .hero-content {
+                h1 {
+                    @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+                }
+
+                p {
+                    @apply text-lg text-zinc-600 max-w-2xl mx-auto;
+                }
+            }
+        }
+
+        .pricing-section {
+            @apply py-24 bg-white border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-7xl mx-auto px-6;
+
+                .pricing-grid {
+                    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+
+                    .pricing-card {
+                        @apply bg-surface rounded-2xl border border-zinc-100 p-8 relative hover:shadow-xl transition-all duration-300;
+
+                        &.featured {
+                            @apply border-primary shadow-xl scale-105 md:scale-100 md:-translate-y-4;
+
+                            .pricing-cta {
+                                @apply bg-primary text-white hover:bg-[#ea580c];
+                            }
+                        }
+
+                        .card-header {
+                            h3 {
+                                @apply text-2xl font-serif font-bold text-black;
+                            }
+
+                            p {
+                                @apply text-zinc-600 text-sm mt-2;
+                            }
+                        }
+
+                        .card-price {
+                            @apply my-8;
+
+                            .price {
+                                @apply text-5xl font-bold text-black;
+                            }
+
+                            .period {
+                                @apply text-zinc-600 text-sm;
+                            }
+                        }
+
+                        .pricing-cta {
+                            @apply w-full py-3 rounded-lg font-semibold mb-8 border border-zinc-200 hover:bg-zinc-50 transition-all;
+                        }
+
+                        .features-list {
+                            @apply space-y-4;
+
+                            .feature-item {
+                                @apply flex items-start space-x-3;
+
+                                svg {
+                                    @apply text-primary mt-0.5 flex-shrink-0;
+                                }
+
+                                span {
+                                    @apply text-sm text-zinc-600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .faq-section {
+            @apply py-24 bg-background;
+
+            .section-inner {
+                @apply max-w-4xl mx-auto px-6;
+
+                h2 {
+                    @apply text-4xl font-serif font-bold text-black text-center mb-16;
+                }
+
+                .faq-grid {
+                    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+
+                    .faq-item {
+                        @apply bg-white rounded-xl border border-zinc-100 p-6;
+
+                        h4 {
+                            @apply font-serif font-bold text-black mb-2;
+                        }
+
+                        p {
+                            @apply text-sm text-zinc-600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Community Page */
+    .community-page {
+        @apply min-h-screen bg-background relative;
+
+        .community-hero {
+            @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+            .hero-content {
+                h1 {
+                    @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+                }
+
+                p {
+                    @apply text-lg text-zinc-600 max-w-2xl mx-auto;
+                }
+            }
+        }
+
+        .community-section {
+            @apply py-24 bg-white border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-7xl mx-auto px-6;
+
+                .section-head {
+                    @apply text-center mb-16;
+
+                    h2 {
+                        @apply text-4xl font-serif font-bold text-black mb-4;
+                    }
+
+                    p {
+                        @apply text-lg text-zinc-600;
+                    }
+                }
+
+                .loading {
+                    @apply h-40 flex items-center justify-center text-zinc-500;
+                }
+
+                .empty-state {
+                    @apply h-40 flex items-center justify-center bg-zinc-50 rounded-xl border border-dashed border-zinc-200;
+
+                    p {
+                        @apply text-zinc-600;
+                    }
+                }
+
+                .projects-grid {
+                    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+
+                    .community-card {
+                        @apply bg-surface rounded-xl border border-zinc-100 overflow-hidden hover:shadow-xl transition-all duration-300;
+
+                        .preview {
+                            @apply relative overflow-hidden bg-zinc-100 aspect-4/3;
+
+                            img {
+                                @apply w-full h-full object-cover hover:scale-105 transition-transform duration-300;
+                            }
+
+                            .overlay {
+                                @apply absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-all duration-300 flex items-center justify-center;
+
+                                .view-btn {
+                                    @apply px-4 py-2 bg-white text-black rounded-lg text-sm font-semibold hover:bg-primary hover:text-white transition-all flex items-center gap-2;
+                                }
+                            }
+                        }
+
+                        .card-body {
+                            @apply p-6;
+
+                            .card-header {
+                                @apply flex justify-between items-start mb-4;
+
+                                h3 {
+                                    @apply text-lg font-serif font-bold text-black;
+                                }
+
+                                .actions {
+                                    @apply flex gap-2;
+
+                                    .action-btn {
+                                        @apply w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-primary hover:text-white hover:border-primary transition-all;
+                                    }
+                                }
+                            }
+
+                            .card-meta {
+                                @apply flex items-center gap-2 text-xs text-zinc-500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Enterprise Page */
+    .enterprise-page {
+        @apply min-h-screen bg-background relative;
+
+        .enterprise-hero {
+            @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+            .hero-content {
+                h1 {
+                    @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+                }
+
+                p {
+                    @apply text-lg text-zinc-600 max-w-2xl mx-auto mb-8;
+                }
+            }
+        }
+
+        .benefits-section {
+            @apply py-24 bg-white border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-7xl mx-auto px-6;
+
+                h2 {
+                    @apply text-4xl font-serif font-bold text-black text-center mb-16;
+                }
+
+                .benefits-grid {
+                    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+
+                    .benefit-card {
+                        @apply bg-surface rounded-2xl border border-zinc-100 p-8 hover:shadow-lg transition-all;
+
+                        .benefit-icon {
+                            @apply w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 text-secondary;
+                        }
+
+                        h3 {
+                            @apply text-lg font-serif font-bold text-black mb-3;
+                        }
+
+                        p {
+                            @apply text-sm text-zinc-600;
+                        }
+                    }
+                }
+            }
+        }
+
+        .use-cases-section {
+            @apply py-24 bg-background border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-7xl mx-auto px-6;
+
+                h2 {
+                    @apply text-4xl font-serif font-bold text-black text-center mb-16;
+                }
+
+                .use-cases-grid {
+                    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+
+                    .use-case-card {
+                        @apply bg-white rounded-xl border border-zinc-100 p-8 hover:shadow-lg transition-all;
+
+                        .check-icon {
+                            @apply w-8 h-8 text-primary mb-4;
+                        }
+
+                        h3 {
+                            @apply text-xl font-serif font-bold text-black mb-2;
+                        }
+
+                        p {
+                            @apply text-zinc-600;
+                        }
+                    }
+                }
+            }
+        }
+
+        .features-table-section {
+            @apply py-24 bg-white border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-7xl mx-auto px-6;
+
+                h2 {
+                    @apply text-4xl font-serif font-bold text-black text-center mb-16;
+                }
+
+                .features-table {
+                    @apply w-full border border-zinc-200 rounded-xl overflow-hidden;
+
+                    thead {
+                        @apply bg-zinc-50;
+
+                        tr {
+                            @apply border-b border-zinc-200;
+
+                            th {
+                                @apply px-6 py-4 text-left font-serif font-bold text-black;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            @apply border-b border-zinc-100 hover:bg-zinc-50 transition-colors;
+
+                            &:last-child {
+                                @apply border-b-0;
+                            }
+
+                            td {
+                                @apply px-6 py-4 text-sm text-zinc-600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .testimonials-section {
+            @apply py-24 bg-background border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-7xl mx-auto px-6;
+
+                h2 {
+                    @apply text-4xl font-serif font-bold text-black text-center mb-16;
+                }
+
+                .testimonials-grid {
+                    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+
+                    .testimonial-card {
+                        @apply bg-white rounded-xl border border-zinc-100 p-8;
+
+                        .quote {
+                            @apply text-zinc-700 italic mb-6 leading-relaxed;
+                        }
+
+                        .author {
+                            @apply text-sm font-semibold text-black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pricing-section {
+            @apply py-24 bg-white border-b border-zinc-100;
+
+            .section-inner {
+                @apply max-w-4xl mx-auto px-6 text-center;
+
+                h2 {
+                    @apply text-4xl font-serif font-bold text-black mb-4;
+                }
+
+                p {
+                    @apply text-lg text-zinc-600 mb-8;
+                }
+            }
+        }
+    }
+
+    /* Footer */
+    .footer {
+        @apply bg-black text-white py-16 border-t border-white/10;
+
+        .footer-inner {
+            @apply max-w-7xl mx-auto px-6;
+
+            .footer-content {
+                @apply grid grid-cols-1 md:grid-cols-4 gap-12 mb-12;
+
+                .footer-section {
+                    h4 {
+                        @apply font-serif font-bold mb-6 text-white;
+                    }
+
+                    ul {
+                        @apply space-y-3;
+
+                        li {
+                            a {
+                                @apply text-zinc-400 hover:text-white transition-colors text-sm;
+                            }
+                        }
+                    }
+                }
+
+                .footer-brand {
+                    .brand {
+                        @apply flex items-center space-x-2 mb-4;
+
+                        .logo {
+                            @apply w-6 h-6 text-white;
+                        }
+
+                        .name {
+                            @apply text-xl font-serif font-bold text-white;
+                        }
+                    }
+
+                    p {
+                        @apply text-zinc-400 text-sm leading-relaxed;
+                    }
+
+                    .social {
+                        @apply flex gap-4 mt-6;
+
+                        a {
+                            @apply w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all;
+                        }
+                    }
+                }
+            }
+
+            .footer-divider {
+                @apply border-t border-white/10 py-6;
+
+                .footer-bottom {
+                    @apply flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-400;
+
+                    .copyright {
+                        @apply text-xs;
+                    }
+
+                    .links {
+                        @apply flex gap-6;
+
+                        a {
+                            @apply hover:text-white transition-colors;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Legal Pages */
+.legal-page {
+    @apply min-h-screen bg-background relative;
+
+    .legal-hero {
+        @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+        .hero-content {
+            h1 {
+                @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+            }
+
+            p {
+                @apply text-lg text-zinc-600;
+            }
+        }
+    }
+
+    .content-section {
+        @apply py-24 bg-white border-b border-zinc-100;
+
+        .section-inner {
+            @apply max-w-4xl mx-auto px-6;
+
+            .legal-content {
+                h2 {
+                    @apply text-3xl font-serif font-bold text-black mt-8 mb-4 first:mt-0;
+                }
+
+                p {
+                    @apply text-zinc-700 mb-4 leading-relaxed;
+                }
+
+                ul {
+                    @apply list-disc list-inside mb-6 space-y-2 text-zinc-700;
+
+                    li {
+                        @apply mb-2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* About Page */
+.about-page {
+    @apply min-h-screen bg-background relative;
+
+    .about-hero {
+        @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+        .hero-content {
+            h1 {
+                @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+            }
+
+            p {
+                @apply text-lg text-zinc-600;
+            }
+        }
+    }
+
+    .content-section {
+        @apply py-24 bg-white;
+
+        .section-inner {
+            @apply max-w-4xl mx-auto px-6;
+
+            .content-block {
+                @apply mb-12;
+
+                h2 {
+                    @apply text-3xl font-serif font-bold text-black mb-4;
+                }
+
+                p {
+                    @apply text-zinc-700 leading-relaxed mb-4;
+
+                    a.link {
+                        @apply text-primary hover:underline font-semibold;
+                    }
+
+                    strong {
+                        @apply font-bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Blog Page */
+.blog-page {
+    @apply min-h-screen bg-background relative;
+
+    .blog-hero {
+        @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+        .hero-content {
+            h1 {
+                @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+            }
+
+            p {
+                @apply text-lg text-zinc-600;
+            }
+        }
+    }
+
+    .blog-section {
+        @apply py-24 bg-white border-b border-zinc-100;
+
+        .section-inner {
+            @apply max-w-7xl mx-auto px-6;
+
+            .blog-grid {
+                @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+
+                .blog-card {
+                    @apply bg-surface rounded-xl border border-zinc-100 p-8 hover:shadow-lg transition-all;
+
+                    h2 {
+                        @apply text-xl font-serif font-bold text-black mb-3;
+                    }
+
+                    .excerpt {
+                        @apply text-zinc-600 text-sm mb-4;
+                    }
+
+                    .meta {
+                        @apply flex items-center gap-4 text-xs text-zinc-500;
+
+                        .date {
+                            @apply font-mono;
+                        }
+
+                        .author {
+                            @apply italic;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Careers Page */
+.careers-page {
+    @apply min-h-screen bg-background relative;
+
+    .careers-hero {
+        @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+        .hero-content {
+            h1 {
+                @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+            }
+
+            p {
+                @apply text-lg text-zinc-600;
+            }
+        }
+    }
+
+    .content-section {
+        @apply py-24 bg-white;
+
+        .section-inner {
+            @apply max-w-7xl mx-auto px-6;
+
+            .content-block {
+                @apply mb-12;
+
+                h2 {
+                    @apply text-3xl font-serif font-bold text-black mb-4;
+                }
+
+                p {
+                    @apply text-zinc-700 leading-relaxed;
+                }
+            }
+
+            .jobs-grid {
+                @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12;
+
+                .job-card {
+                    @apply bg-surface rounded-xl border border-zinc-100 p-8 hover:shadow-lg transition-all;
+
+                    h3 {
+                        @apply font-serif font-bold text-black mb-4;
+                    }
+
+                    .job-meta {
+                        @apply flex gap-4 text-sm text-zinc-600;
+
+                        .location {
+                            @apply font-medium;
+                        }
+
+                        .type {
+                            @apply bg-primary/10 text-primary px-2 py-1 rounded text-xs font-semibold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Contact Page */
+.contact-page {
+    @apply min-h-screen bg-background relative;
+
+    .contact-hero {
+        @apply pt-32 pb-20 px-6 max-w-7xl mx-auto text-center;
+
+        .hero-content {
+            h1 {
+                @apply text-5xl md:text-7xl font-serif font-bold text-black mb-6;
+            }
+
+            p {
+                @apply text-lg text-zinc-600;
+            }
+        }
+    }
+
+    .contact-section {
+        @apply py-24 bg-white;
+
+        .section-inner {
+            @apply max-w-7xl mx-auto px-6;
+
+            .contact-grid {
+                @apply grid grid-cols-1 lg:grid-cols-2 gap-16;
+
+                .contact-info {
+                    h2 {
+                        @apply text-3xl font-serif font-bold text-black mb-8;
+                    }
+
+                    .info-item {
+                        @apply flex gap-6 mb-8;
+
+                        svg {
+                            @apply text-primary flex-shrink-0;
+                        }
+
+                        h3 {
+                            @apply font-serif font-bold text-black mb-2;
+                        }
+
+                        p {
+                            @apply text-zinc-600;
+
+                            a {
+                                @apply text-primary hover:underline;
+                            }
+                        }
+                    }
+                }
+
+                .contact-form {
+                    h2 {
+                        @apply text-3xl font-serif font-bold text-black mb-8;
+                    }
+
+                    .form-group {
+                        @apply mb-6;
+
+                        label {
+                            @apply block font-semibold text-black mb-2 text-sm;
+                        }
+
+                        input,
+                        textarea {
+                            @apply w-full px-4 py-3 rounded-lg border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-black;
+                        }
+
+                        textarea {
+                            @apply resize-y;
+                        }
+                    }
+
+                    .submit-btn {
+                        @apply w-full;
+                    }
+                }
+            }
         }
     }
 }
