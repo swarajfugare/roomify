@@ -47,10 +47,10 @@ const VisualizerId = () => {
                     renderedPath: result.renderedPath,
                     timestamp: Date.now(),
                     ownerId: item.ownerId ?? userId ?? null,
-                    isPublic: item.isPublic ?? false,
+                    isPublic: item.isPublic ?? true,
                 }
 
-                const saved = await createProject({ item: updatedItem, visibility: "private" })
+                const saved = await createProject({ item: updatedItem, visibility: "public" })
 
                 if(saved) {
                     setProject(saved);
