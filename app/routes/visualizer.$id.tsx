@@ -1,6 +1,6 @@
 import { useNavigate, useOutletContext, useParams} from "react-router";
 import {useEffect, useRef, useState} from "react";
-// import {generate3DView} from "../../lib/ai.action";
+import {generate3DView} from "../../lib/ai.action";
 import {Box, Download, RefreshCcw, Share2, X} from "lucide-react";
 import Button from "../../components/ui/Button";
 import {createProject, getProjectById} from "../../lib/puter.action";
@@ -36,27 +36,27 @@ const VisualizerId = () => {
 
         try {
             setIsProcessing(true);
-            // const result = await generate3DView({ sourceImage: item.sourceImage });
+            const result = await generate3DView({ sourceImage: item.sourceImage });
 
-            // if(result.renderedImage) {
-            //     setCurrentImage(result.renderedImage);
+            if(result.renderedImage) {
+                setCurrentImage(result.renderedImage);
 
-            //     const updatedItem = {
-            //         ...item,
-            //         renderedImage: result.renderedImage,
-            //         renderedPath: result.renderedPath,
-            //         timestamp: Date.now(),
-            //         ownerId: item.ownerId ?? userId ?? null,
-            //         isPublic: item.isPublic ?? false,
-            //     }
+                const updatedItem = {
+                    ...item,
+                    renderedImage: result.renderedImage,
+                    renderedPath: result.renderedPath,
+                    timestamp: Date.now(),
+                    ownerId: item.ownerId ?? userId ?? null,
+                    isPublic: item.isPublic ?? false,
+                }
 
-            //     const saved = await createProject({ item: updatedItem, visibility: "private" })
+                const saved = await createProject({ item: updatedItem, visibility: "private" })
 
-            //     if(saved) {
-            //         setProject(saved);
-            //         setCurrentImage(saved.renderedImage || result.renderedImage);
-            //     }
-            // }
+                if(saved) {
+                    setProject(saved);
+                    setCurrentImage(saved.renderedImage || result.renderedImage);
+                }
+            }
         } catch (error) {
             console.error('Generation failed: ', error)
         } finally {
@@ -181,7 +181,7 @@ const VisualizerId = () => {
                         <div className="hint">Drag to compare</div>
                     </div>
 
-                    {/* <div className="compare-stage">
+                     {/* <div className="compare-stage">
                         {project?.sourceImage && currentImage ? (
                             <ReactCompareSlider
                                 defaultValue={50}
@@ -200,7 +200,7 @@ const VisualizerId = () => {
                                 )}
                             </div>
                         )}
-                    </div> */}
+                    </div>  */}
                 </div>
             </section>
         </div>
