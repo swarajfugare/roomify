@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import {ArrowRight, ArrowUpRight, Clock, Layers} from "lucide-react";
 import Button from "../../components/ui/Button";
 import Upload from "../../components/Upload";
@@ -153,6 +154,8 @@ export default function Home() {
                   </div>
               </div>
           </section>
+      
+          <Footer />
       </div>
   )
 }
